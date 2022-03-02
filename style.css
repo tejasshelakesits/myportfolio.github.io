@@ -305,10 +305,9 @@ header .navbar ul li a:hover {
     margin: 16px;
 }
 
-
-/* .portfolio .box-container .box:hover img {
+.portfolio .box-container .box:hover img {
     transform: scale(1.2);
-} */
+}
 
 .contact .row {
     display: flex;
