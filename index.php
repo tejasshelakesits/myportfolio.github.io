@@ -217,7 +217,7 @@ if(isset($_POST['name'])){
 
             </div>
 
-            <form action="">
+            <form action="index.php" method = "post">
 
                 <input type="text" name="name" placeholder="name" class="box">
                 <input type="email" name="email" placeholder="email" class="box">
