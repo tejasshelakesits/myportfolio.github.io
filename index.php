@@ -2,9 +2,13 @@
 $insert = false;
 if(isset($_POST['name'])){
     
-    $server = "localhost";
-    $username = "root";
-    $password = "";
+    $server = "sql210.epizy.com";
+    $username = "epiz_31229596";
+    $password = "ClOd9Ncqvy";
+    $dbname = "epiz_31229596_contact1";
+    // $server = "localhost";
+    // $username = "root";
+    // $password ="";
 
     $con = mysqli_connect($server,$username,$password);
 
