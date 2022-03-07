@@ -12,6 +12,14 @@ if(isset($_POST['name'])){
         die("Connection failed due to ". $mysqli_connect_error());
         
     }
+    // else{
+    //     $stmt = $con->prepare("Insert into rgistration(name,email,project,message)values(?,?,?,?)");
+    //     $stmt->bind_param("ssss",$name,$email,$project,$message);
+    //     $stmt ->execute();
+    //     echo "Registration Successfully...";
+    //     $stmt->close();
+    //     $con->close();
+    // }
 
     // echo "Successfully connecting to the database.";
     
