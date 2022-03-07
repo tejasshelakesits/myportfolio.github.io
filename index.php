@@ -1,3 +1,39 @@
+<?php
+$insert = false;
+if(isset($_POST['name'])){
+    
+    $server = "localhost";
+    $username = "root";
+    $password = "";
+
+    $con = mysqli_connect($server,$username,$password);
+
+    if(!$con){
+        die("Connection failed due to ". $mysqli_connect_error());
+        
+    }
+
+    // echo "Successfully connecting to the database.";
+    
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $project = $_POST['project'];
+    $message = $_POST['message'];
+
+    $sql = "INSERT INTO `myinfo`.`contact1` (`name`, `email`, `project`, `message`, `date`) VALUES ('$name', '$email', '$project', '$message', current_timestamp());";
+    // echo $sql;
+
+    if($con->query($sql) == TRUE){
+        //echo "Successfully inserted.";
+        $insert = true;
+    }
+    else{
+        echo "ERROR: $sql <br> $con->error";
+    }
+    $con->close();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -187,6 +223,11 @@
                 <input type="email" name="email" placeholder="email" class="box">
                 <input type="text" name="project" placeholder="project" class="box">
                 <textarea name="message" id="" cols="30" rows="10" class="box message" placeholder="message"></textarea>
+                <?php
+                if($insert == true){
+                    echo "<p class='submsg'>Thanks for joining me...</p>";
+                }
+                ?>
                 <button type="submit" class="btn">send <i class="fas fa-paper-plane"></i></button>
 
             </form>
@@ -215,3 +256,4 @@
 </html>
 
 <!-- INSERT INTO `contact1` (`sr`, `name`, `email`, `project`, `message`, `date`) VALUES ('1', 'test', 'test@gmail.com', 'yes', 'yes', current_timestamp()); -->
+
